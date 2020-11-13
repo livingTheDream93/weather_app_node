@@ -4,7 +4,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault()
   let term = document.getElementById("searchText").value;
   try {
-    let weather = await fetch("http://localhost:3000/weather?address=" + term)
+    let weather = await fetch("/weather?address=" + term)
     let res = await weather.json()
     document.getElementById('result').innerText = JSON.stringify(res.main) + JSON.stringify(res.weather)
   } catch (err) {
